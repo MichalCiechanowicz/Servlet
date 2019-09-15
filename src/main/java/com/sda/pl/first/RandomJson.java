@@ -8,13 +8,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet("/MyFirstServlet")
+@WebServlet(name="RandomJson", urlPatterns = {"/getRandomNumber", "/RandomJson"})
 public class RandomJson extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse
             response) throws IOException {
-        response.setContentType("text/html");
+        response.setContentType("application/json");
         PrintWriter out = response.getWriter();
         double random = Math.random();
         out.println(random);
